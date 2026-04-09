@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyanna Bernard — Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0d;
+    --cream: #f5f0e8;
+    --gold: #c9a84c;
+    --rust: #b85c38;
+    --sage: #4a6741;
+    --light: #faf7f2;
+    --muted: #8a8278;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--light); color: var(--ink); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(245,240,232,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+  .page-header {
+    background: var(--ink); color: var(--cream);
+    padding: 7rem 5rem 3rem; position: relative; overflow: hidden;
+  }
+  .page-header::after {
+    content: attr(data-title); position: absolute; right: 3rem; bottom: -1.5rem;
+    font-family: 'Playfair Display', serif; font-size: 8rem; font-weight: 900;
+    color: rgba(255,255,255,0.04); letter-spacing: -0.05em; line-height: 1; pointer-events: none;
+  }
+  .page-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1; margin-bottom: 0.5rem; }
+  .page-header h2 em { color: var(--gold); font-style: italic; }
+  .page-header p { color: rgba(255,255,255,0.5); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 300; }
+
+  .content-area { padding: 4rem 5rem 5rem; }
+
+  .section-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.3); }
+
+  .timeline { display: flex; flex-direction: column; }
+  .timeline-item { display: grid; grid-template-columns: 180px 1px 1fr; gap: 0 2rem; padding-bottom: 3rem; }
+
+  .timeline-date { text-align: right; padding-top: 0.2rem; }
+  .timeline-date .date-main { font-size: 0.8rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+  .timeline-date .date-sub { font-size: 0.75rem; color: var(--muted); }
+
+  .timeline-line { width: 1px; background: rgba(201,168,76,0.3); position: relative; flex-shrink: 0; }
+  .timeline-line::before { content: ''; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; position: absolute; top: 4px; left: 50%; transform: translateX(-50%); }
+
+  .timeline-content { padding-bottom: 2rem; }
+  .job-role { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rust); font-weight: 500; margin-bottom: 0.3rem; }
+  .job-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.25rem; line-height: 1.2; }
+  .job-location { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+  .job-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .job-bullets li { font-size: 0.9rem; color: #3a3630; line-height: 1.6; padding-left: 1.2rem; position: relative; font-weight: 300; }
+  .job-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.85rem; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .vol-card { border: 1px solid rgba(201,168,76,0.2); padding: 1.8rem; background: var(--cream); position: relative; overflow: hidden; }
+  .vol-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--sage); }
+  .vol-card .job-role { color: var(--sage); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .page-header { padding: 5rem 1.5rem 2rem; }
+    .content-area { padding: 2rem 1.5rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .timeline-date { text-align: left; }
+    .timeline-line { display: none; }
+    .two-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">KB.</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="experience.html" class="active">Experience</a></li>
+    <li><a href="skills.html">Skills & Education</a></li>
+  </ul>
+</nav>
+
+<div class="page-header" data-title="Work">
+  <p>Professional journey</p>
+  <h2>Work & <em>Volunteer</em></h2>
+</div>
+
+<div class="content-area">
+  <div class="section-label">Work Experience</div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="date-main">Jan 2025<br>Present</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <div class="job-role">Event Assistant</div>
+        <div class="job-title">Facilities Rental</div>
+        <div class="job-location">Brooklyn, New York</div>
+        <ul class="job-bullets">
+          <li>Assisted with the preparation and execution of Summer Rental Groups</li>
+          <li>Prepared keys, completed paperwork, made copies, and distributed pertinent information to guests</li>
+          <li>Tracked check-ins and check-outs, troubleshot issues, and provided exceptional guest service</li>
+          <li>Managed audiovisual components, guest registration, and venue readiness</li>
+          <li>Served as an essential employee in emergency situations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="date-main">Jan 2023<br>Present</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <div class="job-role">Secretary</div>
+        <div class="job-title">Bernard's Accounting</div>
+        <div class="job-location">Brooklyn, New York</div>
+        <ul class="job-bullets">
+          <li>Answered multi-line phone system and greeted callers with professionalism</li>
+          <li>Scheduled 100+ appointments and conducted follow-up calls to clients</li>
+          <li>Screened and directed incoming calls, providing information and taking messages</li>
+          <li>Managed confidential information with utmost discretion and strict confidentiality protocols</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="date-main">Oct 2023<br>Jun 2024</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <div class="job-role">Federal Work Study Student</div>
+        <div class="job-title">Downtown Brooklyn Speech & Hearing Clinic</div>
+        <div class="job-location">Brooklyn, New York</div>
+        <ul class="job-bullets">
+          <li>Maintained confidential files and records in accordance with company policies</li>
+          <li>Coordinated logistics for conferences, seminars, and other corporate events</li>
+          <li>Managed office supplies and inventory to ensure smooth daily operations</li>
+          <li>Developed efficient filing systems, both physical and electronic</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="date-main">Jun 2021<br>Jun 2022</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <div class="job-role">Youth Leader</div>
+        <div class="job-title">Make the Road New York</div>
+        <div class="job-location">Brooklyn, New York</div>
+        <ul class="job-bullets">
+          <li>Provided peer-to-peer college counseling during lunch and after school</li>
+          <li>Created and facilitated college access workshops for seniors and juniors</li>
+          <li>Planned and organized school-wide events for students</li>
+          <li>Maintained positive relationships with Guidance Counselors, Principals, and Staff</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <div class="date-main">Jun 2019<br>Sep 2019</div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <div class="job-role">Day Care Assistant</div>
+        <div class="job-title">Samatha's Day Care</div>
+        <div class="job-location">Brooklyn, New York</div>
+        <ul class="job-bullets">
+          <li>Oversaw reading group for 15 young children aged 2–10</li>
+          <li>Provided homework guidance for 8 children aged 6–10</li>
+          <li>Supervised cleanup, naptime, and performed regular headcounts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top: 1rem;">Volunteer Experience</div>
+  <div class="two-col">
+    <div class="vol-card">
+      <div class="job-role">Youth Leader · Apr 2020 – Oct 2025</div>
+      <div class="job-title" style="font-size:1.1rem; margin-bottom: 0.75rem;">Youth Power Project</div>
+      <ul class="job-bullets">
+        <li>Learned about the school-to-prison and deportation pipeline</li>
+        <li>Spoke at rallies, marches, and press conferences with up to 100 participants</li>
+        <li>Called and met with elected officials to gain support for legislative bills</li>
+      </ul>
+    </div>
+    <div class="vol-card">
+      <div class="job-role">Volunteer · Sep 2022 – Feb 2023</div>
+      <div class="job-title" style="font-size:1.1rem; margin-bottom: 0.75rem;">Project Sunshine LIU</div>
+      <ul class="job-bullets">
+        <li>Planned and led age-appropriate activities for pediatric patients</li>
+        <li>Created and distributed goodie bags to provide comfort to patients</li>
+        <li>Collaborated with hospital staff to support a compassionate environment</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
