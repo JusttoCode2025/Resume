@@ -5,73 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Keyanna Bernard — Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #0f0e0d;
-    --cream: #f5f0e8;
-    --gold: #c9a84c;
-    --rust: #b85c38;
-    --sage: #4a6741;
-    --light: #faf7f2;
-    --muted: #8a8278;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--light); color: var(--ink); overflow-x: hidden; }
-
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.2rem 3rem;
-    background: rgba(245,240,232,0.92); backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-  }
-  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); text-decoration: none; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-
-  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; padding-top: 72px; }
-
-  .hero-left { padding: 5rem 3rem 5rem 5rem; display: flex; flex-direction: column; justify-content: center; }
-  .hero-tag { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
-  .hero-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
-  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 7vw, 6rem); font-weight: 900; line-height: 1; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-  .hero-name span { display: block; font-style: italic; color: var(--rust); }
-  .hero-desc { font-size: 1.05rem; line-height: 1.7; color: var(--muted); max-width: 440px; margin-bottom: 3rem; font-weight: 300; }
-  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  .btn-primary { background: var(--ink); color: var(--cream); padding: 0.9rem 2rem; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.1s; text-decoration: none; display: inline-block; }
-  .btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: var(--ink); padding: 0.9rem 2rem; border: 1.5px solid var(--ink); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
-  .btn-outline:hover { background: var(--ink); color: var(--cream); transform: translateY(-1px); }
-
-  .hero-right { background: var(--cream); position: relative; display: flex; align-items: flex-end; padding: 3rem; overflow: hidden; }
-  .hero-graphic { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-  .hero-circle-big { width: 380px; height: 380px; border-radius: 50%; border: 1.5px solid rgba(201,168,76,0.3); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: slowSpin 20s linear infinite; }
-  .hero-circle-med { width: 260px; height: 260px; border-radius: 50%; background: var(--gold); opacity: 0.12; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-  .hero-initials { font-family: 'Playfair Display', serif; font-size: 9rem; font-weight: 900; color: rgba(201,168,76,0.15); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); letter-spacing: -0.05em; white-space: nowrap; }
-  @keyframes slowSpin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
-
-  .stats-bar { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 1.2rem; width: 100%; }
-  .stat { background: var(--light); padding: 1.2rem 1.5rem; border-left: 3px solid var(--gold); }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--rust); line-height: 1; }
-  .stat-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
-
-  .contact-strip { background: var(--ink); color: var(--cream); padding: 2rem 5rem; display: flex; gap: 3rem; flex-wrap: wrap; align-items: center; }
-  .contact-item { display: flex; align-items: center; gap: 0.75rem; }
-  .contact-item a { color: var(--gold); text-decoration: none; font-size: 0.9rem; transition: opacity 0.2s; }
-  .contact-item a:hover { opacity: 0.7; }
-  .contact-item span { font-size: 0.9rem; color: var(--cream); opacity: 0.8; }
-
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.2rem; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { min-height: 280px; }
-    .hero-left { padding: 3rem 1.5rem; }
-    .contact-strip { padding: 1.5rem; gap: 1.2rem; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
